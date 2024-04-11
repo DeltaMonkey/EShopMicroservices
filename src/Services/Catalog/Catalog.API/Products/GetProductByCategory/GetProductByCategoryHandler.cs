@@ -1,5 +1,4 @@
-﻿using BuildingBlocks.CQRS;
-using Marten;
+﻿using Marten;
 
 namespace Catalog.API.Products.GetProductByCategory;
 

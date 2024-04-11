@@ -1,5 +1,4 @@
-﻿using BuildingBlocks.CQRS;
-using FluentValidation;
+﻿using FluentValidation;
 using Marten;
 
 namespace Catalog.API.Products.UpdateProduct;
@@ -8,7 +7,7 @@ public record UpdateProductCommand(Guid Id, string Name, List<string> Category, 
     ICommand<UpdateProductResult>;
 public record UpdateProductResult(bool IsSuccess);
 
-public class UpdateProductCommandValidator : AbstractValidator<UpdateProductCommand> 
+public class UpdateProductCommandValidator : AbstractValidator<UpdateProductCommand>
 {
     public UpdateProductCommandValidator()
     {

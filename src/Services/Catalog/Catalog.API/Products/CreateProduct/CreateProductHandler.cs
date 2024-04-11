@@ -1,7 +1,5 @@
-﻿using BuildingBlocks.CQRS;
-using FluentValidation;
+﻿using FluentValidation;
 using Marten;
-using Microsoft.Extensions.Logging;
 
 namespace Catalog.API.Products.CreateProduct;
 

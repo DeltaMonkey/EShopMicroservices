@@ -1,5 +1,4 @@
-﻿using BuildingBlocks.CQRS;
-using FluentValidation;
+﻿using FluentValidation;
 using Marten;
 
 namespace Catalog.API.Products.DeleteProduct;
