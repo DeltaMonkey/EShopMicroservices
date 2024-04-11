@@ -1,4 +1,5 @@
-﻿using FluentValidation;
+﻿using Basket.API.Data;
+using FluentValidation;
 
 namespace Basket.API.Basket.DeleteBasket;
 
@@ -14,13 +15,11 @@ public class DeleteBasketCommandValidator : AbstractValidator<DeleteBasketComman
     }
 }
 
-internal class DeleteBasketCommandHandler : ICommandHandler<DeleteBasketCommand, DeleteBasketResult>
+internal class DeleteBasketCommandHandler(IBasketRepository basketRepository) : ICommandHandler<DeleteBasketCommand, DeleteBasketResult>
 {
     public async Task<DeleteBasketResult> Handle(DeleteBasketCommand command, CancellationToken cancellationToken)
     {
-        // TODO: delete bakset from database and cache
-        //session.Delete<Product>(command.Id);
-
-        return new DeleteBasketResult(true);
+        var result = await basketRepository.DeleteBasket(command.UserName, cancellationToken);
+        return new DeleteBasketResult(result);
     }
 }
