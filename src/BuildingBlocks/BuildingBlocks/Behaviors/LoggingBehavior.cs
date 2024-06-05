@@ -22,7 +22,7 @@ public class LoggingBehavior<TRequest, TResponse>(ILogger<LoggingBehavior<TReque
         timer.Stop();
         var timeTaken = timer.Elapsed;
         if (timeTaken.Seconds > 3) // if the request is greater than 3 seconds, then log the warning
-            logger.LogWarning("[PERFORANCE] the request {Request} took {TimeTaken} seconds", 
+            logger.LogWarning("[PERFORANCE] the request {Request} took {TimeTaken} seconds",
                 typeof(TRequest).Name, timeTaken.Seconds);
 
         logger.LogInformation("[END] Handle {Request} with {Response}",

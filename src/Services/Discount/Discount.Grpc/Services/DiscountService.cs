@@ -6,14 +6,14 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Discount.Grpc.Services;
 
-public class DiscountService(DiscountContext dbContext, ILogger<DiscountService> logger) : 
+public class DiscountService(DiscountContext dbContext, ILogger<DiscountService> logger) :
     DiscountProtoService.DiscountProtoServiceBase
 {
     public override async Task<CouponModel> GetDiscount(GetDiscountRequest request, ServerCallContext context)
     {
         var coupon = await dbContext.Coupons.FirstOrDefaultAsync(coupon => coupon.ProductName == request.ProductName);
 
-        if (coupon is null) 
+        if (coupon is null)
         {
             coupon = new Coupon { ProductName = "No Discount", Amount = 0, Description = "No Discount" };
         }

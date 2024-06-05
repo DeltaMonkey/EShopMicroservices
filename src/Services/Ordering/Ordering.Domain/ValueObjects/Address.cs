@@ -11,7 +11,7 @@ public record Address
     public string ZipCode { get; } = default!;
 
     protected Address()
-    { 
+    {
     }
 
     private Address(string firstName, string lastName, string emailAddress, string addressLine, string country, string state, string zipCode)
@@ -26,7 +26,7 @@ public record Address
     }
 
     public static Address Of(string firstName, string lastName, string emailAddress, string addressLine, string country, string state, string zipCode)
-    { 
+    {
         ArgumentException.ThrowIfNullOrWhiteSpace(emailAddress);
         ArgumentException.ThrowIfNullOrWhiteSpace(addressLine);
 

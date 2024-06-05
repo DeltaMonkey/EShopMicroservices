@@ -1,5 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Ordering.Application.Data;
+﻿using Ordering.Application.Data;
 using Ordering.Domain.Models;
 using System.Reflection;
 

@@ -24,6 +24,6 @@ public class UpdateOrder : ICarterModule
         .ProducesProblem(StatusCodes.Status400BadRequest)
         .WithSummary("Update Order")
         .WithDescription("Update Order");
-           
+
     }
 }
